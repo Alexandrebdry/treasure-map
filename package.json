@@ -1,0 +1,11 @@
+{
+  "name": "carte-aux-tresors",
+  "version": "1.0.0",
+  "description": "Une carte aux trésors qui se résout toute seule ",
+  "author": "Alexandre BAUDRY",
+  "license": "ISC",
+  "workspaces": [
+    "front",
+    "back"
+  ]
+}

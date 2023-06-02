@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+
+  # Service back-end.
+  back:
+    # On veut la dernière version et l'imagine minifié pour prendre le moins de place
+    image: node:alpine
+    working_dir: /usr/local/server
+
+    # Permet de laisser le containeur ouvert comme cela pas besoin de lancer un install & run a chaque fois
+    tty: true
+    stdin_open: true
+
+    volumes:
+      - ./back:/usr/local/server
+    environment:
+      - ${BACKPORT}=${BACKPORT}
+    ports:
+      - 127.0.0.1:${BACKPORT}:${BACKPORT}
+
+  front:
+    image: node:alpine
+    working_dir: /usr/local/server
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./front:/usr/local/server
+    environment:
+      - ${FRONTPORT}=${FRONTPORT}
+    ports:
+      - 127.0.0.1:${FRONTPORT}:${FRONTPORT}
+
