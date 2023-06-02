@@ -1,14 +1,40 @@
 :root {
-  font-family:  Avenir, sans-serif;
+  font-family:  "Roboto Light", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
+  background-color: var(--color-primary);
+
+  --color-primary: #f5f5f5;
+  --color-secondary: #FF6600;
+  --color-tertiary: #D84F1F;
+  --color-black : #2d2d2d;
+  --color-plaine: #8BC34A;
+  --color-montagne: #607D8B;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
+
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 2px 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1px 0;
+}
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1px 0;
 }
 
 

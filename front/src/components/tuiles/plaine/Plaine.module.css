@@ -1,0 +1,46 @@
+.tuile {
+    width: 75px;
+    height: 75px;
+    border: 1px solid var(--color-black);
+    background-color: var(--color-plaine);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.top {
+    top: 20%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.bottom {
+    bottom: 10%;
+    left:50%;
+    position: absolute;
+    transform: translate(-50%,0);
+}
+
+.left {
+    right: 10%;
+    top: 50%;
+    position: absolute;
+    transform: translate(0, -50% ) ;
+}
+
+.left::after {
+    content: ">";
+}
+
+.right {
+    left: 10%;
+    top: 50%;
+    position: absolute;
+    transform: translate(0,-50%);
+}
+.right::after {
+    content: "<";
+}

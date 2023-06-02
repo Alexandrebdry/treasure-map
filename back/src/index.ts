@@ -1,25 +1,25 @@
 import express, {Express, Request, Response} from "express";
 import * as dotenv from 'dotenv';
 import {resolve} from "path" ;
-import cors from "cors" ;
+import cors, {CorsOptions} from "cors" ;
 
 dotenv.config({
     path: resolve(__dirname, "../.env"),
 }) ;
 
 const app : Express = express() ;
-const port = process.env.PORT ;
+const port: string | undefined  = process.env.PORT ;
 
-const whiteList: string[] = [
-    "http://localhost:3000"
-] ;
-
-const corsOption = {
-    origin: (origin, callback) => {
-        if(!origin || whiteList.indexOf(origin) !== -1)
-            callback(null,true) ;
-        else callback(new Error("Not allowed by CORS policy.")) ;
-    },
+const corsOption : CorsOptions = {
+    allowedHeaders: [
+        'Origin',
+        'X-Requested-With',
+        'Content-Type',
+        'Accept',
+        'X-Access-Token',
+    ],
+    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    origin: process.env.PATH_FRONT,
     credentials: true
 };
 
@@ -32,6 +32,8 @@ app.get("/", ( req: Request , res: Response) => {
         message : "Bienvenue sur le serveur de l'application la carte aux trésors !"
     }) ;
 }) ;
+
+app.use("/api", require("./api/game")) ;
 
 app.listen(port, () => {
     console.log(`Le serveur vient de se lancer. Il est accessible à l'adresse suivante : http://localhost:${port} ! `) ;

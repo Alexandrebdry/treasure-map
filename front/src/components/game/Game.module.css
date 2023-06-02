@@ -1,0 +1,22 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.game {
+    display: flex;
+}
+
+.rules {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 20px;
+}
+
+.plateau {
+    padding: 20px;
+}

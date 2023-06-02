@@ -1,8 +1,12 @@
+import WelcomeProvider from "./providers/Welcome/WelcomeProvider.tsx";
+import Game from "./components/game/Game.tsx";
 function App() {
 
   return (
     <>
-        <h1>Carte aux trésors</h1>
+        <WelcomeProvider>
+            <Game></Game>
+        </WelcomeProvider>
     </>
   )
 }
